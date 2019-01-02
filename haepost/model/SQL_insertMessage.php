@@ -1,4 +1,5 @@
 <?php 
+date_default_timezone_set('UTC');
 include_once dirname(__FILE__) . "/dbConnect.php";
 
 class SQL_insertMessage{
