@@ -1,0 +1,9 @@
+# AddType    image/x-icon    .ico
+RewriteEngine on
+
+RewriteRule ^$ /action/ShowTopaction.php  [L]
+RewriteRule ^action/postmessage$ /action/PostMessageaction.php  [L]
+RewriteRule ^action/adminlogin$ /action/LoginAdminaction.php  [L]
+RewriteRule ^action/deletemess$ /action/Deletemessaction.php  [L]
+RewriteRule ^action/updmessage$ /action/Updatemessaction.php  [L]
+php_flag short_open_tag On
