@@ -32,6 +32,7 @@
 				</div>
 			</div>
 			<div  align="center"  class="col-sm col-xl-8">
+        <img src="/view/assets/loading.gif" id="loading-indicator" style="display:none" />
 				<?php foreach ($DTO->message_array as $key => $value) { ?>
 					<div class="col-sm-8">
             			<div class="panel panel-white post panel-shadow">
@@ -79,7 +80,13 @@ var url = form.attr('action');
     $.ajax({
            type: "POST",
            url: url ,
-           data: { username: $('#username_inp').val(), message: $('#message_inp').val() },
+          data: { username: $('#username_inp').val(), message: $('#message_inp').val() },
+          beforeSend: function() {
+            $('#loading-indicator').show();
+          },
+          complete: function(){
+            $('#loading-indicator').hide();
+          },
            success: function(data)
            {
              location.reload(); 
@@ -92,7 +99,13 @@ function deleteMessage(id) {
            type: "POST",
            url: "/action/deletemess" ,
            data: { id: id},
-           success: function(data)
+           beforeSend: function() {
+            $('#loading-indicator').show();
+          },
+          complete: function(){
+            $('#loading-indicator').hide();
+          },
+          success: function(data)
            {
              location.reload(); 
            }
