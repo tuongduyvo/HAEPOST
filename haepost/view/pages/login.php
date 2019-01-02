@@ -12,8 +12,12 @@
 
 	<div class="container mt-xl-5  ">
 		<h5 class="text-center">GUESTBOOK ADMIN LOGIN</h5>
-		<p><?php if(isset($DTO->eror)){echo $DTO->eror;} ?></p>
-		<form id="login" class="form-horizontal" action="/action/adminlogin" method="POST">
+		<p class="text-center text-danger"><?php if(isset($DTO->error)){echo $DTO->error;} ?></p>
+		<div class="row">
+    <div class="col">
+    </div>
+    <div class="col-6">
+      <form id="login" class="form-horizontal" action="/action/adminlogin" method="POST">
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="username">Username:</label>
 				<div class="col-sm-10">
@@ -31,6 +35,11 @@
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
 	</div>
-</form>
+	</form>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+		
 </div>
 </html>
